@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     if(vacio() == true){
                         Toast.makeText(getApplicationContext(),"Los campos no deben estar vacios", Toast.LENGTH_LONG).show();
-                    }else{
+                    }
+                    else{
                         intent.putExtra("resultado", String.valueOf(suma(n1,n2)));
                         startActivity(intent);
                     }
@@ -59,7 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     if(vacio() == true){
                         Toast.makeText(getApplicationContext(),"Los campos no deben estar vacios", Toast.LENGTH_LONG).show();
-                    }else{
+                    }else if(Integer.parseInt(numero2.getText().toString())==0){
+                        Toast.makeText(getApplicationContext(),"No se puede dividir entre 0", Toast.LENGTH_LONG).show();
+                    }
+                    else{
                         intent.putExtra("resultado", String.valueOf(division(n1,n2)));
                         startActivity(intent);
                     }
